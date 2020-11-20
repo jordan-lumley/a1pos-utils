@@ -6,52 +6,65 @@ import (
 
 	"github.com/jordan-lumley/a1pos/internal/logger"
 	"github.com/shirou/gopsutil/cpu"
-	"github.com/shirou/gopsutil/disk"
 	"github.com/shirou/gopsutil/mem"
 )
 
+const (
+	refreshPeriod = 1
+	refreshScale  = time.Second
+)
+
 // Execute ...
-func Execute() {
-	go memoryMonitor()
-	go cpuMonitor()
-	go diskMonitor()
+func Execute() error {
+	memChan := make(chan float64)
+	cpuChan := make(chan float64)
+
+	go memoryMonitor(memChan)
+	go cpuMonitor(cpuChan)
+
+	var memUsage float64
+	var cpuUsage float64
+	go func() {
+		for {
+			select {
+			case memUsage = <-memChan:
+			case cpuUsage = <-cpuChan:
+			default:
+
+				fmt.Printf("\rMEMORY USAGE: %f%%/100 CPU USAGE: %f%%/100", memUsage, cpuUsage)
+				time.Sleep(refreshScale * refreshPeriod)
+			}
+		}
+	}()
+
+	return nil
 }
 
-func memoryMonitor() {
+func memoryMonitor(ch chan float64) {
 	for {
 		mem, err := mem.VirtualMemory()
 		if err != nil {
-			logger.Logger().Fatal("FAILED TO GET MEMORY MONITOR")
+			logger.Instance().Fatal("FAILED TO GET MEMORY MONITOR")
 		}
 		memString := fmt.Sprintf("UsedPercent:%f%%", mem.UsedPercent)
 
-		logger.Logger().Info(memString)
-		time.Sleep(time.Second * 5)
+		logger.Instance().Info(memString)
+
+		ch <- mem.UsedPercent
 	}
 }
 
-func cpuMonitor() {
+func cpuMonitor(ch chan float64) {
 	for {
 		cpuPercent, err := cpu.Percent(0, false)
 		if err != nil {
-			logger.Logger().Fatal("FAILED TO GET CPU MONITOR")
+			logger.Instance().Fatal("FAILED TO GET CPU MONITOR")
 		}
 
-		cpuString := fmt.Sprintf("UsedPercent:%f%%", cpuPercent)
+		cpuString := fmt.Sprintf("%f%%", cpuPercent)
 
-		logger.Logger().Info(cpuString)
-		time.Sleep(time.Second * 30)
-	}
-}
+		logger.Instance().Info(cpuString)
 
-func diskMonitor() {
-	for {
-		diskCounter, err := disk.IOCounters()
-		if err != nil {
-			logger.Logger().Fatal("FAILED TO GET DISK MONITOR")
-		}
-
-		logger.Logger().Info(diskCounter)
-		time.Sleep(time.Second * 30)
+		ch <- cpuPercent[0]
 	}
 }

@@ -1,6 +1,11 @@
 package periphies
 
 // Execute ...
-func Execute() {
+func Execute() error {
+	go func() {
+		for {
+		}
+	}()
 
+	return nil
 }
