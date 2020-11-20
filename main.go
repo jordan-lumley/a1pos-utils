@@ -44,7 +44,7 @@ func (d *documentStuff) readAll(r io.Reader) (string, error) {
 
 func (d *documentStuff) read(r io.Reader) (string, error) {
 	all := ""
-	p := make([]byte, 4)
+	p := make([]byte, 18)
 
 	for {
 		n, err := r.Read(p)
@@ -69,6 +69,5 @@ func (d *documentStuff) writeTo(w io.Writer) (int64, error) {
 	if err != nil {
 		panic(err)
 	}
-	println("done writing")
 	return 1, nil
 }
