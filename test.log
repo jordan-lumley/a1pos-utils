@@ -1,29 +1,42 @@
-fffffffffffff3:24:58.19Z [DEBUG] A1POS2020/11/15 22:24:58 before prefix
-2020-11-16T03:24:58.2Z [DEBUG] A1POS2020/11/15 22:24:58 after prefix
-2020-11-16T03:25:07.65Z [DEBUG] A1POS2020/11/15 22:25:07 before prefix
-2020-11-16T03:25:07.65Z [DEBUG] A1POS2020/11/15 22:25:07 after prefix
-2020-11-20T00:17:32.84Z [DEBUG] A1POS2020/11/19 19:17:32 before prefix
-2020-11-20T00:17:32.84Z [DEBUG] A1POS2020/11/19 19:17:32 after prefix
-2020-11-20T00:19:40.18Z [DEBUG] A1POS2020/11/19 19:19:40 before prefix
-2020-11-20T00:19:40.18Z [DEBUG] A1POS2020/11/19 19:19:40 after prefix
-2020-11-20T00:20:13.51Z [DEBUG] A1POS2020/11/19 19:20:13 before prefix
-2020-11-20T00:20:13.51Z [DEBUG] A1POS2020/11/19 19:20:13 after prefix
-2020-11-20T00:21:18.48Z [DEBUG] A1POS2020/11/19 19:21:18 before prefix
-2020-11-20T00:21:18.49Z [DEBUG] A1POS2020/11/19 19:21:18 after prefix
-2020-11-20T00:21:32.91Z [DEBUG] A1POS2020/11/19 19:21:32 before prefix
-2020-11-20T00:21:32.92Z [DEBUG] A1POS2020/11/19 19:21:32 after prefix
-2020-11-20T00:22:30.11Z [DEBUG] A1POS2020/11/19 19:22:30 before prefix
-2020-11-20T00:22:30.11Z [DEBUG] A1POS2020/11/19 19:22:30 after prefix
-2020-11-20T00:23:24.09Z [DEBUG] A1POS2020/11/19 19:23:24 before prefix
-2020-11-20T00:23:24.09Z [DEBUG] A1POS2020/11/19 19:23:24 after prefix
-2020-11-20T00:23:52.72Z [DEBUG] A1POS2020/11/19 19:23:52 before prefix
-2020-11-20T00:23:52.73Z [DEBUG] A1POS2020/11/19 19:23:52 after prefix
-2020-11-20T00:24:22.42Z [DEBUG] A1POS2020/11/19 19:24:22 before prefix
-2020-11-20T00:24:22.42Z [DEBUG] A1POS2020/11/19 19:24:22 after prefix
-2020-11-20T00:25:45.32Z [DEBUG] A1POS2020/11/19 19:25:45 before prefix
-2020-11-20T00:25:45.32Z [DEBUG] A1POS2020/11/19 19:25:45 after prefix
-2020-11-20T00:25:51.17Z [DEBUG] A1POS2020/11/19 19:25:51 before prefix
-2020-11-20T00:25:51.17Z [DEBUG] A1POS2020/11/19 19:25:51 after prefix
-2020-11-20T00:27:10.94Z [DEBUG] A1POS2020/11/19 19:27:10 before prefix
-2020-11-20T00:27:10.94Z [DEBUG] A1POS2020/11/19 19:27:10 after prefix
-asdfasdfasdfasdfasdfasdfasdfasdfffffffffffffffffffffffffffffffffffffffffffffffffffff
+{
+  "file": "C:/Users/jorda/Projects/github.com/jordan-lumley/a1pos/main.go:16",
+  "func": "main.main",
+  "level": "info",
+  "msg": "main() initialize",
+  "time": "2020-11-19T21:57:11-05:00"
+}
+{
+  "file": "C:/Users/jorda/Projects/github.com/jordan-lumley/a1pos/cmd/monitor/monitor.go:28",
+  "func": "github.com/jordan-lumley/a1pos/cmd/monitor.memoryMonitor",
+  "level": "info",
+  "msg": "UsedPercent:41.000000%",
+  "time": "2020-11-19T21:57:11-05:00"
+}
+{
+  "file": "C:/Users/jorda/Projects/github.com/jordan-lumley/a1pos/cmd/monitor/monitor.go:42",
+  "func": "github.com/jordan-lumley/a1pos/cmd/monitor.cpuMonitor",
+  "level": "info",
+  "msg": "UsedPercent:[33.333333]%",
+  "time": "2020-11-19T21:57:11-05:00"
+}
+{
+  "file": "C:/Users/jorda/Projects/github.com/jordan-lumley/a1pos/cmd/monitor/monitor.go:54",
+  "func": "github.com/jordan-lumley/a1pos/cmd/monitor.diskMonitor",
+  "level": "info",
+  "msg": "map[C::{\"readCount\":1207534,\"mergedReadCount\":0,\"writeCount\":2738129,\"mergedWriteCount\":0,\"readBytes\":61628195840,\"writeBytes\":114180459008,\"readTime\":999,\"writeTime\":608,\"iopsInProgress\":0,\"ioTime\":0,\"weightedIO\":0,\"name\":\"C:\",\"serialNumber\":\"\",\"label\":\"\"} D::{\"readCount\":84248,\"mergedReadCount\":0,\"writeCount\":48379,\"mergedWriteCount\":0,\"readBytes\":21655307776,\"writeBytes\":21142647808,\"readTime\":791,\"writeTime\":567,\"iopsInProgress\":0,\"ioTime\":0,\"weightedIO\":0,\"name\":\"D:\",\"serialNumber\":\"\",\"label\":\"\"} E::{\"readCount\":9690,\"mergedReadCount\":0,\"writeCount\":12,\"mergedWriteCount\":0,\"readBytes\":217210368,\"writeBytes\":49152,\"readTime\":2,\"writeTime\":0,\"iopsInProgress\":0,\"ioTime\":0,\"weightedIO\":0,\"name\":\"E:\",\"serialNumber\":\"\",\"label\":\"\"}]",
+  "time": "2020-11-19T21:57:11-05:00"
+}
+{
+  "file": "C:/Users/jorda/Projects/github.com/jordan-lumley/a1pos/cmd/monitor/monitor.go:28",
+  "func": "github.com/jordan-lumley/a1pos/cmd/monitor.memoryMonitor",
+  "level": "info",
+  "msg": "UsedPercent:40.000000%",
+  "time": "2020-11-19T21:57:16-05:00"
+}
+{
+  "file": "C:/Users/jorda/Projects/github.com/jordan-lumley/a1pos/cmd/monitor/monitor.go:28",
+  "func": "github.com/jordan-lumley/a1pos/cmd/monitor.memoryMonitor",
+  "level": "info",
+  "msg": "UsedPercent:40.000000%",
+  "time": "2020-11-19T21:57:21-05:00"
+}

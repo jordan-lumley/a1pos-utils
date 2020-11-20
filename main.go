@@ -7,14 +7,13 @@ import (
 
 	"github.com/jordan-lumley/a1pos/cmd/monitor"
 	"github.com/jordan-lumley/a1pos/cmd/periphies"
+	"github.com/jordan-lumley/a1pos/internal/logger"
 
 	"github.com/jordan-lumley/service"
 )
 
 func main() {
-	// logger.GetLogger().Println("before prefix")
-
-	// logger.GetLogger().Println("after prefix")
+	logger.Logger().Info("main() initialize")
 
 	monitor.Execute()
 	periphies.Execute()
