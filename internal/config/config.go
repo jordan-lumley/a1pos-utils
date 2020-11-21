@@ -1,54 +1,38 @@
 package config
 
 import (
-	"encoding/json"
-	"io/ioutil"
+	"fmt"
 	"os"
-	"path/filepath"
 )
 
 var (
 	// CurrentConfig ...
-	currentConfig Object
-
-	configFileContents []byte
+	allMaps map[string]string
 )
 
-// Object ...
-type Object struct {
-	LogConfig logConfig `json:"log"`
-}
-
-// LogConfig ...
-type logConfig struct {
-	File string `json:"file"`
-}
-
 // Config ...
-func Config() error {
-	configFilePath, err := filepath.Abs("./config.json")
-	if err != nil {
-		return err
+func initializeConfig() {
+	// configFilePath := os.Getenv("A1POS_CONFIG_FILE")
+	// if configFilePath == "" {
+	// 	fmt.Println("Cannot find the config file path, please make sure A1POS_CONFIG_FILE ENV VAR is set. Exiting...")
+	// 	os.Exit(1)
+	// }
+
+	osVar := os.Getenv("OS")
+	if osVar == "" {
+		fmt.Println("Cannot find the config file path, please make sure OS ENV VAR is set. Exiting...")
+		os.Exit(1)
 	}
 
-	configFile, err := os.Open(configFilePath)
-	if err != nil {
-		return err
-	}
+	allMaps = make(map[string]string)
 
-	c, err := ioutil.ReadAll(configFile)
-	if err != nil {
-		return err
-	}
-
-	configFileContents = c
-
-	json.Unmarshal(configFileContents, &currentConfig)
-
-	return nil
+	allMaps["OS"] = "osVar"
 }
 
-// CurrentConfig ...
-func CurrentConfig() (Object, error) {
-	return currentConfig, nil
+// Instance ...
+func Instance() map[string]string {
+	if allMaps == nil {
+		initializeConfig()
+	}
+	return allMaps
 }

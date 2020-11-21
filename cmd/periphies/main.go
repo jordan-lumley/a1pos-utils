@@ -1,4 +1,4 @@
-package periphies
+package main
 
 // Execute ...
 func Execute() error {

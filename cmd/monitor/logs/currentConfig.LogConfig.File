@@ -1,0 +1,49 @@
+{
+  "file": "C:/Users/jorda/Projects/github.com/jordan-lumley/a1pos/internal/service/service.go:19",
+  "func": "github.com/jordan-lumley/a1pos/internal/service.Run",
+  "level": "info",
+  "msg": "Service Running....",
+  "time": "2020-11-20T22:40:46-05:00"
+}
+{
+  "file": "C:/Users/jorda/Projects/github.com/jordan-lumley/a1pos/internal/monitors/memory/memory.go:30",
+  "func": "github.com/jordan-lumley/a1pos/internal/monitors/memory.Monitor.Start.func1",
+  "level": "info",
+  "msg": "UsedPercent:37.000000%",
+  "time": "2020-11-20T22:40:46-05:00"
+}
+{
+  "file": "C:/Users/jorda/Projects/github.com/jordan-lumley/a1pos/internal/monitors/cpu/cpu.go:29",
+  "func": "github.com/jordan-lumley/a1pos/internal/monitors/cpu.Monitor.Start.func1",
+  "level": "info",
+  "msg": "[0.000000]%",
+  "time": "2020-11-20T22:40:46-05:00"
+}
+{
+  "file": "C:/Users/jorda/Projects/github.com/jordan-lumley/a1pos/internal/monitors/memory/memory.go:30",
+  "func": "github.com/jordan-lumley/a1pos/internal/monitors/memory.Monitor.Start.func1",
+  "level": "info",
+  "msg": "UsedPercent:36.000000%",
+  "time": "2020-11-20T22:40:47-05:00"
+}
+{
+  "file": "C:/Users/jorda/Projects/github.com/jordan-lumley/a1pos/internal/monitors/cpu/cpu.go:29",
+  "func": "github.com/jordan-lumley/a1pos/internal/monitors/cpu.Monitor.Start.func1",
+  "level": "info",
+  "msg": "[18.619792]%",
+  "time": "2020-11-20T22:40:47-05:00"
+}
+{
+  "file": "C:/Users/jorda/Projects/github.com/jordan-lumley/a1pos/internal/monitors/cpu/cpu.go:29",
+  "func": "github.com/jordan-lumley/a1pos/internal/monitors/cpu.Monitor.Start.func1",
+  "level": "info",
+  "msg": "[22.265625]%",
+  "time": "2020-11-20T22:40:48-05:00"
+}
+{
+  "file": "C:/Users/jorda/Projects/github.com/jordan-lumley/a1pos/internal/monitors/memory/memory.go:30",
+  "func": "github.com/jordan-lumley/a1pos/internal/monitors/memory.Monitor.Start.func1",
+  "level": "info",
+  "msg": "UsedPercent:36.000000%",
+  "time": "2020-11-20T22:40:48-05:00"
+}
