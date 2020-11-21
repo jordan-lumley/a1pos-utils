@@ -8,9 +8,10 @@ import (
 
 	"github.com/jordan-lumley/a1pos/internal/config"
 	"github.com/jordan-lumley/a1pos/internal/logger"
-	cpuInternal "github.com/jordan-lumley/a1pos/internal/monitors/cpu"
-	"github.com/jordan-lumley/a1pos/internal/monitors/memory"
 	"github.com/jordan-lumley/a1pos/internal/service"
+	"github.com/jordan-lumley/a1pos/pkg/monitor/memory"
+	processor "github.com/jordan-lumley/a1pos/pkg/monitor/processor"
+	"github.com/jordan-lumley/a1pos/pkg/monitor/types"
 )
 
 const (
@@ -45,17 +46,9 @@ func main() {
 	memChan := make(chan float64)
 	cpuChan := make(chan float64)
 
-	cpuMon, err := cpuInternal.New(cpuChan)
-	if err != nil {
-		panic(err)
-	}
-	go cpuMon.Start()
+	go Start(processor.Processor{Channel: cpuChan})
 
-	memMon, err := memory.New(memChan)
-	if err != nil {
-		panic(err)
-	}
-	go memMon.Start()
+	go Start(memory.Memory{Channel: memChan})
 
 	var memUsage float64
 	var cpuUsage float64
@@ -72,4 +65,9 @@ func main() {
 	}()
 
 	service.Run()
+}
+
+// Start ...
+func Start(monitor types.IMonitor) {
+	monitor.Start()
 }
