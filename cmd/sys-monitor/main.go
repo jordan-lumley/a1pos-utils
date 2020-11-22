@@ -31,14 +31,11 @@ func main() {
 
 	logger.SetOutput(file)
 
-	memChan := make(chan float64)
-	cpuChan := make(chan float64)
+	cpuMon := monitor.Processor{}
+	cpuChan := monitor.Start(cpuMon)
 
-	cpuMon := monitor.Processor{Output: cpuChan}
-	go monitor.Start(cpuMon)
-
-	memMon := monitor.Memory{Output: memChan}
-	go monitor.Start(memMon)
+	memMon := monitor.Memory{}
+	memChan := monitor.Start(memMon)
 
 	var memUsage float64
 	var cpuUsage float64

@@ -6,8 +6,8 @@ import (
 
 func TestMonitors(t *testing.T) {
 	testCases := []Monitor{
-		Memory{Output: make(chan float64)},
-		Processor{Output: make(chan float64)},
+		Memory{},
+		Processor{},
 	}
 
 	for _, tc := range testCases {
