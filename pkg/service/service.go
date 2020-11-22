@@ -2,8 +2,6 @@ package service
 
 import (
 	"sync"
-
-	"github.com/jordan-lumley/a1pos/internal/logger"
 )
 
 var wg sync.WaitGroup
@@ -16,6 +14,5 @@ func Run() {
 		}
 	}()
 
-	logger.Instance().Info("Service Running....")
 	wg.Wait()
 }

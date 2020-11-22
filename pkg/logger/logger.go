@@ -6,10 +6,6 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-const (
-	prefix = "A1POS: "
-)
-
 var (
 	logger *logrus.Logger
 )
