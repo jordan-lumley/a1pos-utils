@@ -9,7 +9,6 @@ import (
 	"github.com/jordan-lumley/a1pos/pkg/fs"
 	"github.com/jordan-lumley/a1pos/pkg/logger"
 	"github.com/jordan-lumley/a1pos/pkg/monitor"
-	"github.com/jordan-lumley/a1pos/pkg/service"
 )
 
 const (
@@ -50,6 +49,4 @@ func main() {
 			}
 		}
 	}()
-
-	service.Run()
 }
